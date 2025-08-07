@@ -17,7 +17,7 @@ class PlayerLookup {
 
   async _loadPlayerData() {
     try {
-      const response = await fetch('./players-by-team.json');
+      const response = await fetch('/players-by-team.json');
       if (!response.ok) {
         throw new Error(`Failed to load players-by-team.json: ${response.status} ${response.statusText}`);
       }
