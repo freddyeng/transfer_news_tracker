@@ -3,6 +3,11 @@ import { checkHeadlineForPlayers } from './playerLookup.js';
 
 const API_URL = 'https://eventregistry.org/api/v1/article/getArticles';
 const API_KEY = import.meta.env.VITE_EVENTREGISTRY_API_KEY;
+console.log('🔑 API Key status:', {
+  isDefined: !!API_KEY,
+  length: API_KEY?.length || 0,
+  firstFewChars: API_KEY ? `${API_KEY.substring(0, 4)}...` : 'undefined'
+});
 
 export function calculateSummaryStats(articles, keyword) {
   if (!articles || articles.length === 0) {
