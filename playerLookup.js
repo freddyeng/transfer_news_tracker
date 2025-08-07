@@ -28,11 +28,14 @@ class PlayerLookup {
       const allPlayers = [];
       for (const [team, players] of Object.entries(playersByTeam)) {
         players.forEach(player => {
-          const [firstName, ...lastNameParts] = player.name.split(' ');
+          const nameParts = player.name.split(' ');
+          // For single-name players, use their name as both forename and surname
+          const forename = nameParts[0];
+          const surname = nameParts.length > 1 ? nameParts.slice(1).join(' ') : nameParts[0];
           allPlayers.push({
             name: player.name,
-            forename: firstName,
-            surname: lastNameParts.join(' '),
+            forename: forename,
+            surname: surname,
             team: player.team,
             position: player.position,
             league: player.league
