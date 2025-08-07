@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Tracker (Event Registry)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<h1>News Tracker</h1>
+
+<div class="top-section">
+  <fieldset class="query-section">
+    <legend>Query parameters</legend>
+    <div id="params">
+      <!-- initial parameter row, e.g. keyword -->
+      <div class="kv-row">
+        <input placeholder="Parameter" value="keyword" />
+        <input placeholder="Value" />
+        <button type="button" class="remove-row">×</button>
+      </div>
+    </div>
+    <button id="add-row" type="button">+ Add param</button>
+  </fieldset>
+
+  <fieldset class="actions-section">
+    <legend>Actions</legend>
+    <button id="send" type="button">Send query</button>
+  </fieldset>
+</div>
+
+<fieldset class="responses-container">
+  <legend>Responses</legend>
+  <div class="response-grid">
+    <div class="response-item">
+      <h3>API Response</h3>
+      <pre id="raw">— idle —</pre>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="articles-section">
+  <legend>Articles</legend>
+  <div class="articles-grid">
+    <!-- Article sections will be dynamically added here -->
+  </div>
+</fieldset>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>
